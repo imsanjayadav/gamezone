@@ -95,83 +95,88 @@
       box-shadow: 0 8px 20px var(--shadow);
     }
 
-    /* Modern Decent Card Design */
+    /* Soft 3D Toy Card Design */
     .game-card {
       background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border-radius: 40px;
+      padding: 12px;
+      box-shadow: 0 15px 35px var(--shadow), 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: var(--transition);
       cursor: pointer;
+      position: relative;
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(0, 0, 0, 0.03);
+      gap: 16px;
+      border: 8px solid #fff;
+      /* Sticker effect */
     }
 
     .game-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     .game-thumb {
       width: 100%;
       aspect-ratio: 16/10;
-      position: relative;
-      background: #f8f9fa;
+      border-radius: 32px;
+      background: #f0f0f0;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
     }
 
     .game-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: transform 0.5s;
     }
 
     .game-card:hover .game-thumb img {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     .game-info-row {
-      padding: 16px 20px 20px;
       display: flex;
       flex-direction: column;
+      /* Stacked for a cleaner, bolder look */
+      align-items: center;
       gap: 12px;
-      background: white;
+      padding: 0 8px 12px;
     }
 
     .game-card h4 {
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 26px;
+      font-weight: 800;
       color: var(--text);
-      letter-spacing: -0.2px;
-      line-height: 1.2;
+      text-align: center;
+      letter-spacing: -0.5px;
     }
 
     .play-button-large {
       width: 100%;
+      justify-content: center;
       background: var(--primary);
       color: white;
-      padding: 12px;
-      border-radius: 16px;
-      font-weight: 700;
-      font-size: 18px;
+      padding: 14px 0;
+      border-radius: 28px;
+      font-weight: 800;
+      font-size: 22px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: all 0.2s ease;
-      border: none;
-      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
-    }
-
-    .game-card:hover .play-button-large {
-      background: #ff5252;
-      box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
+      gap: 12px;
+      box-shadow: 0 8px 0 #d63031;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.1s;
     }
 
     .game-card:active .play-button-large {
-      transform: scale(0.97);
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #d63031;
     }
 
     /* Hide Search and Section Headers */
@@ -357,35 +362,35 @@
     // Game Data
     const games = [
       {
-        link: "https://games.cdn.famobi.com/html5games/z/zoo-boom/cd0be843/?fg_domain=play.famobi.com&fg_aid=A1000-111&fg_uid=5e772ebe-9e0a-4cd3-adcf-bba662f35535&fg_pid=e37ab3ce-88cd-4438-9b9c-a37df5d33736&fg_beat=416&original_ref=https%3A%2F%2Fplay.famobi.com%2Fhtml5game%2F5e772ebe-9e0a-4cd3-adcf-bba662f35535%2FA1000-11",
+        link: "https://games.cdn.famobi.com/html5games/z/zoo-boom/cd0be843/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=5e772ebe-9e0a-4cd3-adcf-bba662f35535&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=420&original_ref=",
         name: "Zoo Boom",
         image: "https://img.cdn.famobi.com/portal/html5games/images/tmp/ZooBoomTeaser.jpg?v=0.2-ecf77b68"
       },
       {
-        link: "https://games.cdn.famobi.com/html5games/o/om-nom-run/v1240/?fg_domain=play.famobi.com&fg_aid=A1000-111&fg_uid=abe80572-560a-444d-baf7-2fa4a7b2c02f&fg_pid=e37ab3ce-88cd-4438-9b9c-a37df5d33736&fg_beat=397&original_ref=https%3A%2F%2Fplay.famobi.com%2Fom-nom-run",
+        link: "https://games.cdn.famobi.com/html5games/o/om-nom-run/v1240/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=abe80572-560a-444d-baf7-2fa4a7b2c02f&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=421&original_ref=",
         name: "Om Nom Run",
         image: "https://img.cdn.famobi.com/portal/html5games/images/tmp/OmNomRunTeaser.jpg?v=0.2-ecf77b68"
       },
       {
-        link: "https://play.famobi.com/cannon-balls-3d",
+        link: "https://games.cdn.famobi.com/html5games/c/cannon-balls-3d/v230/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=3ffa11c2-61da-4974-892b-473582253371&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=421&original_ref=",
         name: "Cannon Balls 3D",
         image: "https://img.cdn.famobi.com/portal/html5games/images/tmp/CannonBalls3dTeaser.jpg?v=0.2-ecf77b68"
       },
       {
-        link: "https://games.cdn.famobi.com/html5games/b/bubble-woods/v570/?fg_domain=play.famobi.com&fg_aid=A1000-111&fg_uid=53159388-d515-45e5-b65a-56d21c595405&fg_pid=e37ab3ce-88cd-4438-9b9c-a37df5d33736&fg_beat=396&original_ref=https%3A%2F%2Fplay.famobi.com%2Fbubble-woods",
+        link: "https://games.cdn.famobi.com/html5games/b/bubble-woods/v570/?fg_domain=play.famobi.com&fg_aid=A1000-111&fg_uid=53159388-d515-45e5-b65a-56d21c595405&fg_pid=e37ab3ce-88cd-4438-9b9c-a37df5d33736&fg_beat=417&original_ref=https%3A%2F%2Fplay.famobi.com%2Fhtml5game%2F53159388-d515-45e5-b65a-56d21c595405%2FA1000-11",
         name: "Bubble Woods",
         image: "https://img.cdn.famobi.com/portal/html5games/images/tmp/BubbleWoodsTeaser.jpg"
       },
       {
-        link: "https://play.famobi.com/solitaire-klondike",
-        name: "Solitaire",
-        image: "https://img.cdn.famobi.com/portal/html5games/images/tmp/SolitaireKlondikeTeaser.jpg"
+        link: "https://games.cdn.famobi.com/html5games/m/moto-x3m-pool-party/v080/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=b2102250-eb51-4704-9cab-ff296491cc68&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=421&original_ref=",
+        name: "Moto X3M Pool Party",
+        image: "https://img.cdn.famobi.com/portal/html5games/images/tmp/MotoX3mPoolPartyTeaser.jpg"
       }
       ,
       {
-        link: "https://5dd30ab4-015f-11ea-ad56-9cb6d0d995f7.gdn.poki.com/a9b6d9fd-0b47-4682-9649-0e95c2d95625/index.html?country=IN&ccpaApplies=0&url_referrer=https%3A%2F%2Fpoki.com%2F&tag=pg-a48a53eef9c7118b4e8636d916d13b154fef749e&site_id=3&iso_lang=en&poki_url=https%3A%2F%2Fpoki.com%2Fen%2Fg%2Fstickman-hook&hoist=yes&nonPersonalized=n&cloudsavegames=n&familyFriendly=n&categories=1%2C3%2C4%2C9%2C37%2C76%2C927%2C929%2C1103%2C1120%2C1126%2C1140%2C1190%2C1193&special_condition=landing&game_id=5dd30ab4-015f-11ea-ad56-9cb6d0d995f7&game_version_id=a9b6d9fd-0b47-4682-9649-0e95c2d95625&inspector=0&csp=1",
-        name: "Stickman Hook.",
-        image: "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/99e090d154caf30f3625df7e456d5984/stickman-hook.png"
+        link: "https://play.famobi.com/solitaire-klondike",
+        name: "Solitaire",
+        image: "https://img.cdn.famobi.com/portal/html5games/images/tmp/SolitaireKlondikeTeaser.jpg"
       }
 
     ];
